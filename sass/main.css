@@ -753,6 +753,13 @@ footer .container .social-icons a span:hover {
   color: #2acfcf;
 }
 
+footer .my-details {
+  text-align: center;
+  font-size: 2.5rem;
+  color: white;
+  margin-top: 2rem;
+}
+
 @media (max-width: 500px) {
   footer .container {
     -webkit-box-orient: vertical;
