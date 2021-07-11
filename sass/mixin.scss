@@ -1,0 +1,32 @@
+@import "var";
+
+@mixin default-nav-ul($direction) {
+  display: flex;
+  flex-direction: $direction;
+  list-style-type: none;
+}
+
+@mixin default-nav-link($fontsize, $color, $hovercolor) {
+  font-size: $fontsize;
+  text-decoration: none;
+  display: block;
+  color: $color;
+  transition: all 0.3s;
+  &:hover {
+    color: $hovercolor;
+  }
+}
+
+@mixin default-btn($fontsize, $borderRad, $paddingTB, $paddingRL) {
+  background-color: $btn-color;
+  padding: $paddingTB $paddingRL;
+  font-size: $fontsize;
+  border: none;
+  border-radius: $borderRad;
+  color: white;
+  transition: all 0.3s;
+  &:hover {
+    background-color: $btn-hover-color;
+    cursor: pointer;
+  }
+}

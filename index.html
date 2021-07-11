@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Shortly URL shortening </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./sass/main.css">
+
+</head>
+
+<body>
+  <!-- navbar -->
+  <header class="container">
+    <a class="logo" href="/"><img src="./images/logo.svg" alt="logo"></a>
+
+    <ul>
+      <li><a href="#">Features</a> </li>
+      <li><a href="#">Pricing</a> </li>
+      <li><a href="#">Resources</a> </li>
+    </ul>
+
+    <div class="nav-btns">
+      <button class="nav-btn login-btn">Login</button>
+      <button class="nav-btn signup-btn">Sign Up</button>
+    </div>
+
+    <!-- side nav  -->
+    <div class="slide-nav slide-nav-hide">
+      <ul>
+        <li><a href="#">Features</a> </li>
+        <li><a href="#">Pricing</a> </li>
+        <li><a href="#">Resources</a> </li>
+      </ul>
+      <div class="slide-nav-btns">
+        <button class="slide-nav-btn login-btn">Login</button>
+        <button class="slide-nav-btn signup-btn">Sign Up</button>
+      </div>
+    </div>
+
+    <div class="toggle-btn"><span class="fa fa-bars"></span> </div>
+  </header>
+  <!-- hero-container -->
+  <div class="container hero-container">
+    <div class="hero-col hero-text">
+      <h1>More than just shorter links</h1>
+      <p>Build your brand’s recognition and get detailed insights
+        on how your links are performing.</p>
+      <button>Get Started</button>
+    </div>
+    <div class=" hero-col hero-img">
+      <img src="./images/illustration-working.svg" alt="img" />
+    </div>
+  </div>
+
+  <!-- gray section -->
+  <section class="gray-bg">
+    <div class="url-data container">
+
+      <div class="input-container">
+        <div class="input-div">
+          <input type="text" id="inputUrl" name="input-url" placeholder="Shorten a link here..." />
+          <p class="error-msg">Please add a link</p>
+        </div>
+        <button type="button" onclick="shortUrl()" class="shorten-btn">Shorten It!</button>
+      </div>
+
+
+
+    </div>
+
+
+    <!-- advance statistics  -->
+    <div class="advance-stats container">
+      <h2>Advanced Statistics</h2>
+      <p>Track how your links are performing across the web with <br> our
+        advanced statistics dashboard.</p>
+      <div class="stat-cards-container">
+        <div class="stat-card card-one">
+          <div class="card-img"><img src="./images/icon-brand-recognition.svg" alt="img"></div>
+          <h1>Brand Recognition</h1>
+          <p>Boost your brand recognition with each click. Generic links don’t
+            mean a thing. Branded links help instil confidence in your content.</p>
+        </div>
+        <div class="stat-card card-two">
+          <div class="card-img"><img src="./images/icon-detailed-records.svg" alt="img"></div>
+          <h1>Detailed Records</h1>
+          <p>Gain insights into who is clicking your links. Knowing when and where
+            people engage with your content helps inform better decisions.</p>
+        </div>
+        <div class="stat-card card-three">
+          <div class="card-img"><img src="./images/icon-fully-customizable.svg" alt="img"></div>
+          <h1>Fully Customizable</h1>
+          <p>Improve brand awareness and content discoverability through customizable
+            links, supercharging audience engagement.</p>
+        </div>
+        <div class="stick"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- book today  -->
+  <div class="book-container">
+    <h1>Boost your links today</h1>
+    <button>Get Started</button>
+  </div>
+
+  <!-- footer  -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo"><img src="./images/logo-light.svg" alt="logo"></div>
+      <div class="footer-ul-links">
+        <ul>
+          <li class="ul-header">Features</li>
+          <li><a href="#">Link Shortening</a></li>
+          <li><a href="#">Branded Links</a></li>
+          <li><a href="#">Analytics</a></li>
+        </ul>
+        <ul>
+          <li class="ul-header">Resources</li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Developers</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+        <ul>
+          <li class="ul-header">Company</li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Our Team</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="social-icons">
+        <a href="#"><img src="./images/icon-facebook.svg" alt="icon"></a>
+        <a href="#"><img src="./images/icon-twitter.svg" alt="icon"></a>
+        <a href="#"><img src="./images/icon-pinterest.svg" alt="icon"></a>
+        <a href="#"><img src="./images/icon-instagram.svg" alt="icon"></a>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script src="./index.js"></script>
+</body>
+
+
+</html>
