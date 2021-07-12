@@ -749,8 +749,8 @@ section.gray-bg {
 
 .book-container button {
   background-color: #2acfcf;
-  padding: 1.5rem 2rem;
-  font-size: 2.5rem;
+  padding: 1.2rem 2rem;
+  font-size: 2.1rem;
   border: none;
   border-radius: 3rem;
   color: white;
@@ -765,7 +765,7 @@ section.gray-bg {
 
 footer {
   background-color: #191c25;
-  padding: 6rem 0;
+  padding: 6rem 1rem;
 }
 
 footer .container {
@@ -778,7 +778,9 @@ footer .container {
 }
 
 footer .container .footer-logo {
-  width: 20%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 footer .container .footer-logo img {
@@ -786,13 +788,15 @@ footer .container .footer-logo img {
 }
 
 footer .container .footer-ul-links {
-  width: 45%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 footer .container .footer-ul-links ul {
@@ -804,6 +808,7 @@ footer .container .footer-ul-links ul {
       -ms-flex-direction: column;
           flex-direction: column;
   list-style-type: none;
+  margin-right: 0.5rem;
 }
 
 footer .container .footer-ul-links ul .ul-header {
@@ -828,7 +833,9 @@ footer .container .footer-ul-links ul a:hover {
 }
 
 footer .container .social-icons {
-  width: 15%;
+  -webkit-box-flex: 0.3;
+      -ms-flex-positive: 0.3;
+          flex-grow: 0.3;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -888,7 +895,7 @@ footer .my-details {
     margin-top: 4rem;
   }
   footer .container .social-icons {
-    width: 50%;
+    width: 70%;
     margin-top: 4rem;
   }
 }

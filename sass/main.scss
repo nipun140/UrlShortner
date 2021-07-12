@@ -536,31 +536,32 @@ section.gray-bg {
   }
 
   button {
-    @include default-btn(2.5rem, 3rem, 1.5rem, 2rem);
+    @include default-btn(2.1rem, 3rem, 1.2rem, 2rem);
   }
 }
 
 ///////////////////// footer
 footer {
   background-color: #191c25;
-  padding: 6rem 0;
+  padding: 6rem 1rem;
 
   .container {
     display: flex;
     justify-content: space-between;
 
     .footer-logo {
-      width: 20%;
+      flex-grow: 1;
       img {
         height: 3rem;
       }
     }
     .footer-ul-links {
-      width: 45%;
+      flex-grow: 1;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
       ul {
         @include default-nav-ul(column);
+        margin-right: 0.5rem;
 
         .ul-header {
           margin-bottom: 2rem;
@@ -577,7 +578,7 @@ footer {
     }
 
     .social-icons {
-      width: 15%;
+      flex-grow: 0.3;
       display: flex;
       justify-content: space-between;
 
@@ -622,7 +623,7 @@ footer {
         }
       }
       .social-icons {
-        width: 50%;
+        width: 70%;
         margin-top: 4rem;
       }
     }
