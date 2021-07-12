@@ -1,5 +1,7 @@
 html {
   font-size: 10px;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 body {
@@ -91,13 +93,19 @@ header ul li a:hover {
 .slide-nav {
   position: absolute;
   top: 110%;
+  overflow: hidden;
   z-index: 2;
   width: 100%;
   left: 0;
   right: 0;
   background-color: #35323e;
-  padding: 3rem;
   border-radius: 1rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.dummy {
+  padding: 3rem;
 }
 
 .slide-nav ul {
@@ -166,17 +174,55 @@ header ul li a:hover {
 }
 
 .slide-nav-show {
-  display: block;
+  height: 334.229px;
 }
 
 .slide-nav-hide {
-  display: none;
+  height: 0px;
 }
 
-.toggle-btn {
+.hamburger-btn {
+  width: 3.5rem;
+  height: 3.2rem;
   display: none;
-  font-size: 3.25rem;
-  color: black;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hamburger-btn .bar {
+  height: 0.6rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  background: #307c94;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+.hamburger-btn .anim-bar1 {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.hamburger-btn .anim-bar2 {
+  opacity: 0;
+  -webkit-transform: translateX(-30%);
+          transform: translateX(-30%);
+}
+
+.hamburger-btn .anim-bar3 {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 @media (max-width: 768px) {
@@ -193,7 +239,9 @@ header ul li a:hover {
     display: none;
   }
   .toggle-btn {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
@@ -274,6 +322,7 @@ header ul li a:hover {
   }
   .hero-container .hero-text {
     text-align: center;
+    margin-top: 2.5rem;
   }
   .hero-container .hero-text h1 {
     font-size: 5rem;
@@ -294,7 +343,7 @@ section.gray-bg {
 }
 
 .url-data {
-  margin-bottom: 8rem;
+  margin-bottom: 3rem;
 }
 
 .input-container {
@@ -304,8 +353,10 @@ section.gray-bg {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width: 100%;
-  padding: 5rem;
+  padding: 6rem;
   background: url("../images/bg-shorten-desktop.svg");
   background-size: cover;
   background-color: #3b3054;
@@ -361,6 +412,48 @@ section.gray-bg {
 .input-container button:hover {
   background-color: #6ed8d8;
   cursor: pointer;
+}
+
+.spinner-container {
+  height: 3.5rem;
+  position: absolute;
+  bottom: 1rem;
+  display: none;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-radius: 50%;
+}
+
+.spinner-container .spinner {
+  height: 100%;
+  width: 3.5rem;
+  border-radius: 50%;
+  border-left: 0.3rem solid red;
+  -webkit-animation: rotate 1s infinite linear;
+          animation: rotate 1s infinite linear;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 .input-error {
@@ -715,7 +808,7 @@ footer .container .footer-ul-links ul {
 
 footer .container .footer-ul-links ul .ul-header {
   margin-bottom: 2rem;
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: white;
   font-weight: bold;
 }
@@ -755,9 +848,10 @@ footer .container .social-icons a span:hover {
 
 footer .my-details {
   text-align: center;
-  font-size: 2.5rem;
+  margin-bottom: -5rem;
+  font-size: 2rem;
   color: white;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 @media (max-width: 500px) {
@@ -812,11 +906,17 @@ footer .my-details {
   html {
     font-size: 8px;
   }
+  .slide-nav-show {
+    height: 298.125px;
+  }
 }
 
 @media (max-width: 250px) {
   html {
     font-size: 7px;
+  }
+  .slide-nav-show {
+    height: 260.698px;
   }
 }
 /*# sourceMappingURL=main.css.map */

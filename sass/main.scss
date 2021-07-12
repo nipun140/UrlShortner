@@ -3,6 +3,8 @@
 
 html {
   font-size: 10px;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 body {
@@ -63,13 +65,18 @@ header ul li a {
 .slide-nav {
   position: absolute;
   top: 110%;
+  overflow: hidden;
   z-index: 2;
   width: 100%;
   left: 0;
   right: 0;
   background-color: $v-dark-blue;
-  padding: 3rem;
   border-radius: 1rem;
+  transition: all 0.2s;
+}
+
+.dummy {
+  padding: 3rem;
 }
 
 .slide-nav ul {
@@ -101,16 +108,47 @@ header ul li a {
 }
 
 .slide-nav-show {
-  display: block;
+  // display: block;
+  height: 334.229px;
 }
 .slide-nav-hide {
-  display: none;
+  // display: none;
+  height: 0px;
 }
 
-.toggle-btn {
+/////////////////////////hamburger btn
+
+.hamburger-btn {
+  // border: 1px solid;
+  width: 3.5rem;
+  height: 3.2rem;
   display: none;
-  font-size: 3.25rem;
-  color: black;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  .bar {
+    height: 0.6rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    background: #307c94;
+    position: relative;
+    transition: all 0.3s;
+    transform-origin: left;
+  }
+
+  .anim-bar1 {
+    transform: rotate(45deg);
+  }
+
+  .anim-bar2 {
+    opacity: 0;
+    transform: translateX(-30%);
+  }
+
+  .anim-bar3 {
+    transform: rotate(-45deg);
+  }
 }
 
 @media (max-width: 768px) {
@@ -124,7 +162,7 @@ header ul li a {
   }
 
   .toggle-btn {
-    display: block;
+    display: flex;
   }
 }
 
@@ -175,6 +213,7 @@ header ul li a {
     }
     .hero-text {
       text-align: center;
+      margin-top: 2.5rem;
       h1 {
         font-size: 5rem;
       }
@@ -197,14 +236,15 @@ section.gray-bg {
 
 //////////////////////url data container
 .url-data {
-  margin-bottom: 8rem;
+  margin-bottom: 3rem;
 }
 
 .input-container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   width: 100%;
-  padding: 5rem;
+  padding: 6rem;
   background: url("../images/bg-shorten-desktop.svg");
   background-size: cover;
   background-color: $dark-voilet;
@@ -245,6 +285,32 @@ section.gray-bg {
   button {
     @include default-btn(2.2rem, 1rem, 1.5rem, 1.5rem);
     width: 23%;
+  }
+}
+
+.spinner-container {
+  height: 3.5rem;
+  position: absolute;
+  bottom: 1rem;
+  display: none;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  .spinner {
+    height: 100%;
+    width: 3.5rem;
+    border-radius: 50%;
+    border-left: 0.3rem solid red;
+    animation: rotate 1s infinite linear;
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
   }
 }
 
@@ -498,7 +564,7 @@ footer {
 
         .ul-header {
           margin-bottom: 2rem;
-          font-size: 2rem;
+          font-size: 2.2rem;
           color: white;
           font-weight: bold;
         }
@@ -528,9 +594,10 @@ footer {
 
   .my-details {
     text-align: center;
-    font-size: 2.5rem;
+    margin-bottom: -5rem;
+    font-size: 2rem;
     color: white;
-    margin-top: 2rem;
+    margin-top: 3rem;
   }
 }
 
@@ -576,10 +643,17 @@ footer {
   html {
     font-size: 8px;
   }
+  .slide-nav-show {
+    height: 298.125px;
+  }
 }
 
 @media (max-width: 250px) {
   html {
     font-size: 7px;
+  }
+
+  .slide-nav-show {
+    height: 260.698px;
   }
 }

@@ -33,18 +33,25 @@
 
     <!-- side nav  -->
     <div class="slide-nav slide-nav-hide">
-      <ul>
-        <li><a href="#">Features</a> </li>
-        <li><a href="#">Pricing</a> </li>
-        <li><a href="#">Resources</a> </li>
-      </ul>
-      <div class="slide-nav-btns">
-        <button class="slide-nav-btn login-btn">Login</button>
-        <button class="slide-nav-btn signup-btn">Sign Up</button>
+      <div class="dummy">
+        <ul>
+          <li><a href="#">Features</a> </li>
+          <li><a href="#">Pricing</a> </li>
+          <li><a href="#">Resources</a> </li>
+        </ul>
+        <div class="slide-nav-btns">
+          <button class="slide-nav-btn login-btn">Login</button>
+          <button class="slide-nav-btn signup-btn">Sign Up</button>
+        </div>
       </div>
     </div>
 
-    <div class="toggle-btn"><span class="fa fa-bars"></span> </div>
+    <!-- <div class="toggle-btn"><span class="fa fa-bars"></span> </div> -->
+    <div class="toggle-btn hamburger-btn">
+      <div class="bar1 bar "></div>
+      <div class="bar2 bar"></div>
+      <div class="bar3 bar "></div>
+    </div>
   </header>
   <!-- hero-container -->
   <div class="container hero-container">
@@ -63,14 +70,26 @@
   <section class="gray-bg">
     <div class="url-data container">
 
+
       <div class="input-container">
         <div class="input-div">
           <input type="text" id="inputUrl" name="input-url" placeholder="Shorten a link here..." />
           <p class="error-msg">Please add a link</p>
         </div>
-        <button type="button" onclick="shortUrl()" class="shorten-btn">Shorten It!</button>
+        <button type="button" class="shorten-btn">Shorten It!</button>
+
+        <div class="spinner-container">
+          <div class="spinner"></div>
+        </div>
       </div>
 
+      <div class="url-container">
+        <p class="old-url">sample old-link</p>
+        <div class="flex-end-div">
+          <p class="new-url">sample new-link</p>
+          <button onclick="copyToClipboard('${newLink}',this)" class="copy-btn">copy</button>
+        </div>
+      </div>
 
 
     </div>

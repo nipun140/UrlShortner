@@ -1,10 +1,14 @@
 //////////////////////////////////////navbar
-const toggleBtn = document.querySelector(".toggle-btn");
+const hamburgerBtn = document.querySelector(".hamburger-btn");
 const slideNavbar = document.querySelector(".slide-nav");
+const bar1 = document.querySelector(".bar.bar1");
+const bar2 = document.querySelector(".bar.bar2");
+const bar3 = document.querySelector(".bar.bar3");
 
-toggleBtn.addEventListener("click", () => {
-  toggleBtn.querySelector("span").classList.toggle("fa-bars");
-  toggleBtn.querySelector("span").classList.toggle("fa-close");
+hamburgerBtn.addEventListener("click", () => {
+  bar1.classList.toggle("anim-bar1");
+  bar2.classList.toggle("anim-bar2");
+  bar3.classList.toggle("anim-bar3");
   slideNavbar.classList.toggle("slide-nav-show");
   slideNavbar.classList.toggle("slide-nav-hide");
 });
@@ -14,10 +18,11 @@ toggleBtn.addEventListener("click", () => {
 const inputUrl = document.getElementById("inputUrl");
 const shortenBtn = document.querySelector(".shorten-btn");
 const errorMsg = document.querySelector(".error-msg");
+const spinner = document.querySelector(".spinner-container");
 
-const shortUrl = () => {
+shortenBtn.onclick = () => {
   console.log("short btn clicked");
-  console.log(inputUrl.value);
+  console.log("value of input is: " + inputUrl.value);
   if (inputUrl.value === "") {
     console.log("empty input value");
     inputUrl.classList.add("input-error");
@@ -26,6 +31,7 @@ const shortUrl = () => {
     console.log("non-empty input value,procceeded");
     inputUrl.classList.remove("input-error");
     errorMsg.style.display = "none";
+    spinner.style.display = "block";
     fetchUrl(inputUrl.value);
     inputUrl.value = "";
   }
@@ -68,19 +74,20 @@ function fetchUrl(oldLink) {
 //update the dom with new fetched short url
 
 function updateUrlInDom(oldLink, newLink) {
+  spinner.style.display = "none";
   const urlDataContainer = document.querySelector(".url-data");
 
-  const newHtml = `   <div class="url-container">
-        <p class="old-url">${oldLink}</p>
-        <div class="flex-end-div">
-          <p class="new-url">${newLink}</p>
-          <button onclick="copyToClipboard('${newLink}',this)" class="copy-btn">copy</button>
-        </div>
-      </div>`;
+  const newUrlData = document.createElement("div");
+  newUrlData.classList.add("url-container");
+  const newHtml = `<p class="old-url">${oldLink}</p>
+                  <div class="flex-end-div">
+                   <p class="new-url">${newLink}</p>
+                  <button onclick="copyToClipboard('${newLink}',this)" class="copy-btn">copy</button>
+                  </div>`;
 
-  let oldHtml = urlDataContainer.innerHTML;
+  newUrlData.innerHTML = newHtml;
 
-  urlDataContainer.innerHTML = oldHtml + newHtml;
+  urlDataContainer.append(newUrlData);
 }
 
 const copyBtnArr = document.querySelectorAll(".copy-btn");
